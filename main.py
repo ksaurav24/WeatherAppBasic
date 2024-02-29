@@ -3,7 +3,7 @@ from datetime import datetime as dt
 
 # Function to fetch and display weather information
 def weather(location, API_key):
-    try:
+    try: # Try to connect to the internet and fetch weather data
         # Construct the API URL using the location and API key
         url = ('https://api.openweathermap.org/data/2.5/weather?q='+location+'&appid='+API_key)
         # Make a GET request to the API
@@ -45,7 +45,7 @@ def weather(location, API_key):
                 break
             else:
                 print('Invalid unit! Please enter either "C" or "F".')
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException as e: # Handle internet connection errors
         print('Error connecting to the internet. Please check your internet connection.')
 
 # Api key
@@ -66,8 +66,13 @@ while True:
     # Prompt user if they want to search for another location
     lastInput = input('Do you want to search another location? (Y/N): ')
     # If user doesn't want to search another location, exit the loop
-    if lastInput.upper() != 'Y':
+    if lastInput.upper() == 'N':
         print('Thank you for using our service')
+        break
+    elif lastInput.upper() == 'Y':
+        continue
+    else:
+        print('Invlid Input')
         break
 
 # Wait for user to press Enter before exiting
