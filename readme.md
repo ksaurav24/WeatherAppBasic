@@ -10,8 +10,14 @@ Before using this script, ensure you have the following:
 - Python 3 installed on your system
 - `requests` library installed. You can install it via pip:
 
+
+```snell
+git clone "Repo Link"
+
+
   ```shell
   pip install requests
+
 
 
 An API key from OpenWeatherMap. You can sign up and get the API key here.
