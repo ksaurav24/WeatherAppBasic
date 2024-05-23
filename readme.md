@@ -13,7 +13,7 @@ Before using this script, ensure you have the following:
 
 ```snell
 git clone "Repo Link"
-
+```
 
   ```shell
   pip install requests
